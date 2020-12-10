@@ -1,0 +1,150 @@
+clear all;
+close all;
+clc;
+
+%%
+%AC performance (open-loop frequency response)
+doc_freq = load('OL_freq.txt');
+doc_phase = load('OL_phase.txt');
+doc_gain = load('OL_mag.txt');
+
+f = doc_freq(:,1);
+phase = doc_phase(:, 1);
+mag = doc_gain(:, 1);
+
+%Gain plot
+subplot(2,1,1);
+semilogx(f, mag, 'r' ,'linewidth', 1.5);
+set(gca,'XTickLabel',{})
+set(gca,'YTickLabel',{'-40dB','-20dB','0dB', '20dB', '40dB', '60dB', '80dB'})
+title('AC response', 'fontsize', 18);
+ylabel('Magnitude', 'fontsize', 14);
+grid;
+xline(331100000)
+
+%Phase plot
+subplot(2,1,2);
+semilogx(f, phase, 'r', 'linewidth', 1.5);
+set(gca,'XTickLabel',{'1k', '10k','100k','1M','10M', '100M', '1G', '10G'})
+set(gca,'YTickLabel',{'-300°','-250°','-200°', '-150°', '-100°', '-50°', '0°', '50°', '100°'})
+ylabel('Phase', 'fontsize', 14);
+xlabel('Frequency [Hz]', 'fontsize', 14);
+grid;
+xline(331100000)
+yline(-180)
+
+%Close-up of phasemargin
+figure;
+semilogx(f, phase, 'r' ,'linewidth', 1.5);
+set(gca,'XTickLabel',{'200', '250','300','350','400', '450', '500', '550', '600', '650'})
+set(gca,'YTickLabel',{'-190°','-180°','-170°', '-160°', '-150°', '-140°', '-130°', '-120°', '-110°', '-100°', '-90°'})
+title('Phasemargin', 'fontsize', 18)
+ylabel('Phase', 'fontsize', 14);
+xlabel('Frequency [MHz]', 'fontsize', 14);
+grid;
+axis([165550000 662200000 -190 -90])
+xline(331100000)
+yline(-107.8)
+yline(-180)
+
+%%
+%Corner analysis
+doc_freq        = load('OL_freq.txt');
+doc_NN_mag      = load('NN_mag.txt');
+doc_NN_phase    = load('NN_phase.txt');
+doc_FF_mag      = load('FF_mag.txt');
+doc_FF_phase    = load('FF_phase.txt');
+doc_FS_mag      = load('FS_mag.txt');
+doc_FS_phase    = load('FS_phase.txt');
+doc_SF_mag      = load('SF_mag.txt');
+doc_SF_phase    = load('SF_phase.txt');
+doc_SS_mag      = load('SS_mag.txt');
+doc_SS_phase    = load('SS_phase.txt');
+
+f           = doc_freq(:,1);
+NN_mag      = doc_NN_mag(:,1);
+NN_phase    = doc_NN_phase(:,1);
+FF_mag      = doc_FF_mag(:,1);
+FF_phase    = doc_FF_phase(:,1);
+FS_mag      = doc_FS_mag(:,1);
+FS_phase    = doc_FS_phase(:,1);
+SF_mag      = doc_SF_mag(:,1);
+SF_phase    = doc_SF_phase(:,1);
+SS_mag      = doc_SS_mag(:,1);
+SS_phase    = doc_SS_phase(:,1);
+
+figure;
+subplot(2,1,1);
+
+semilogx(f, NN_mag, 'linewidth', 1.5);
+title('Process variations on open-loop gain (AC performance)', 'fontsize', 18)
+set(gca,'XTickLabel',{})
+set(gca,'YTickLabel',{'-40dB','-20dB','0dB', '20dB', '40dB', '60dB', '80dB'})
+ylabel('Magnitude', 'fontsize', 14)
+hold on;
+semilogx(f, FF_mag, 'linewidth', 1.5);
+semilogx(f, FS_mag, 'linewidth', 1.5);
+semilogx(f, SF_mag, 'linewidth', 1.5);
+semilogx(f, SS_mag, 'linewidth', 1.5);
+legend('NN', 'FF', 'FS', 'SF', 'SS');
+[hleg,icons,plots] = legend('show');
+title(hleg,'Corner type')
+hleg.Title.Visible = 'on';
+grid;
+hold off;
+subplot(2,1,2);
+semilogx(f, NN_phase, 'linewidth', 1.5);
+set(gca,'XTickLabel',{'1k', '10k','100k','1M','10M', '100M', '1G', '10G'})
+set(gca,'YTickLabel',{'-300°','-250°','-200°', '-150°', '-100°', '-50°', '0°', '50°', '100°'})
+hold on;
+semilogx(f, FF_phase, 'linewidth', 1.5);
+semilogx(f, FS_phase, 'linewidth', 1.5);
+semilogx(f, SF_phase, 'linewidth', 1.5);
+semilogx(f, SS_phase, 'linewidth', 1.5);
+legend('NN', 'FF', 'FS', 'SF', 'SS');
+[hleg,icons,plots] = legend('show');
+title(hleg,'Corner type')
+hleg.Title.Visible = 'on';
+ylabel('Phase', 'fontsize', 14)
+xlabel('Frequency [Hz]', 'fontsize', 14)
+grid;
+hold off;
+
+%%
+%Closed-loop gain
+doc_cl_gain = load('CL_mag.txt');
+doc_cl_freq = load('CL_freq.txt');
+
+cl_mag = doc_cl_gain(:,1);
+cl_freq = doc_cl_freq(:,1);
+
+figure;
+semilogx(cl_freq, cl_mag, 'r', 'linewidth', 1.5);
+grid;
+title('Closed-loop gain', 'fontsize', 18)
+set(gca,'XTickLabel',{'1k', '10k','100k','1M','10M', '100M', '1G', '10G'})
+xlabel('Frequency [Hz]', 'fontsize', 14)
+ylabel('Magnitude [V]', 'fontsize', 14)
+axis([1e3 10e9 0 2.5])
+
+%%
+%Transient analysis
+doc_time = load('transient_time.txt');
+doc_input = load('transient_input.txt');
+doc_output = load('transient_output.txt');
+
+t = doc_time(:,1);
+in = doc_input(:,1);
+out = doc_output(:,1);
+
+plot(t*1e9, in*1e3, 'linewidth', 1.5);
+hold on;
+plot(t*1e9, out*1e3, 'linewidth', 1.5);
+hold off;
+xlabel('Time [ns]');
+ylabel('Voltage [mV]');
+title('Transient response');
+legend('Input', 'Output');
+grid;
+
+axis([0 500 0 700]);
