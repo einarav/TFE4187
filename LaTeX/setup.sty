@@ -1,0 +1,201 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{packages}[2020/09/15 Packages]
+\usepackage[utf8]{inputenc} % Character encoding
+
+% ------ Contents -------
+% Appendices
+% Bibliography & References
+% Code input
+% Flow charts
+% Front matter
+% General
+% Image
+% Language
+% Main matter
+% Mathematics
+% Page setup
+% -----------------------
+
+% --- Appendices ---
+%\usepackage{appendix}
+%\newcommand{\addappendix}{   % Self-created command to insert appendix with predefined settings
+%    \newpage
+%    \appendix
+%    \section*{Appendix}   % Name of appendix
+%    \addcontentsline{toc}{section}{Appendix}  % Add appendix name to table of contents
+%    \renewcommand{\thesubsection}{\Alph{subsection}}    % Change numbering of section to upper-case letters.
+%}
+
+% --- Bibliography & References---  
+%\usepackage[backend = biber,    % Recommended backend for sorting bibliography
+%            style = authoryear-comp,    % Close to the 'Harvard' referencing style
+%            urldate = long,     % Long: 24th Mar. 1997 | Short: 24/03/1997
+%            maxcitenames = 2,   % Number of authors in cite before replaced with 'Author#1 et al.'
+%            ]{biblatex}
+%\addbibresource{references.bib}     % Adding our file containing the references
+% \addbibresource{reference_2.bib} is possible if we want to add several reference files
+
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage[nottoc]{tocbibind}  % Includes Bibliography, Index, list of Listing etc. to table of contents
+%\newcommand{\source}[1]{\vspace{-4pt} \caption*{\hfill \footnotesize{Source: {#1}} } }   % Easily insert sources in images
+
+% --- Code ---
+\usepackage{minted} % Includes several programming languages and styles
+
+% --- Flow Charts ---
+% Keep in mind that you may customize these flow chart settings to fit your own preferences.
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+% --- Front matter ---
+% Front matter is located before the table of contents, e.g. preface (Norsk: forord) and has separate settings
+\newcommand{\frontmatter}{
+    \pagenumbering{roman}   % Setting page numbering to lower-case roman
+}
+% Edit title of lists (uncomment below)
+\renewcommand*\contentsname{Table of Contents}   % Rename table of contents
+\renewcommand{\listfigurename}{List of Figures}   % Rename list of figures
+\renewcommand{\listtablename}{List of Tables}  % Rename list of tables
+
+% --- General ---
+\usepackage[british]{babel}     % Defining UK English as language. This will among other things ensure that dates are displayed as 24/03/1997 rather than 03/24/1997 in the bibliography.
+\usepackage{import}     % Enable importing of sections
+\usepackage{csquotes}   % Provides international handling of quote marks. Especially useful for bibliography management using BibLaTeX
+\usepackage{hyperref}   % Hyper-references, possible to change color
+\hypersetup{    % Color of hyper-references
+    colorlinks,
+    citecolor = black,
+    filecolor = black,
+    linkcolor = blue,
+    urlcolor = black
+}
+\usepackage{comment}    % Comment blocks of text
+\def\equationautorefname{Equation}  % Autoref-name for equations
+\def\figureautorefname{Figure}  % Autoref-name for figures
+\def\tableautorefname{Table}    % Autoref-name for tables
+\def\sectionautorefname{Section}    % Autoref-name for sections
+\def\subsectionautorefname{\sectionautorefname} % Autoref-name for subsections
+\def\subsubsectionautorefname{\sectionautorefname} % Autoref-name for subsubsections
+\usepackage[labelfont=bf]{caption}  %Bold figure text
+
+% --- Image ---
+\usepackage{graphicx}   % Handle images
+\usepackage{wrapfig}    % Wrap text around images
+\usepackage{float}      % Force image location using "H"
+\usepackage{url}
+\urlstyle{sf}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}   % Ruler
+
+% --- Language ---
+\usepackage{siunitx}    % Enable SI units
+
+% --- Main matter ---
+% This is the main part of the paper.
+\newcommand{\mainmatter}{
+    \newpage
+    \pagenumbering{arabic}  % Setting page numbering to normal integers
+}
+
+% --- Mathematics ---
+\usepackage{bm}     % Bold text in math mode
+\usepackage{amsmath}    %  Math formulas and improved typographical quality of their output
+\usepackage{amssymb}    % Extended symbol collection
+\usepackage{amsthm}     % Helps define theorem-like structures
+
+% --- Page setup ---
+\usepackage[a4paper, total={150mm, 245mm,footskip = 14mm}]{geometry}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.8em}
+
+% Customized header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.1ex}
+\renewcommand{\footrulewidth}{0.1ex}
+\fancyfoot[C]{\thepage}
+
+
+% --- CircuiTikZ setup ---
+\usepackage[compatibility,siunitx,  americanvoltages, americancurrents, americanresistors, europeaninductors, americanports,%
+  straightlabels, fetbodydiode, straightvoltages]{circuitikz}
+\usepackage{tikz,amsmath, amssymb,bm,color,pgfkeys,siunitx,ifthen,ulem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usetikzlibrary{shapes,arrows}
+%\usepackage{agaramondc}					% Adobe Garamond, custom shape
+%\renewcommand{\shapedefault}{rtl} % rtl: roman tabular lining
+
+\usetikzlibrary{backgrounds,calc,positioning}
+
+\usetikzlibrary{circuits.ee.IEC}
+\usetikzlibrary{arrows}
+
+\ctikzset{tripoles/mos style/arrows}
+\ctikzset{
+	/tikz/circuitikz/quadpoles/coupler/width=1,%1.3
+	/tikz/circuitikz/quadpoles/coupler/height=0.952,%1.3
+	/tikz/circuitikz/quadpoles/coupler2/width=1,%1.3
+	/tikz/circuitikz/quadpoles/coupler2/height=0.952,%1.3
+	/tikz/circuitikz/quadpoles/transformer/width=1.425,%1.5
+	/tikz/circuitikz/quadpoles/transformer/height=1.425,%1.5
+	/tikz/circuitikz/quadpoles/transformer core/width=1.425,%1.5
+	/tikz/circuitikz/quadpoles/transformer core/height=1.425,%1.5
+	/tikz/circuitikz/quadpoles/gyrator/width=1.425,%1.5
+	/tikz/circuitikz/quadpoles/gyrator/height=1.425,%1.5
+	%/tikz/circuitikz/monopoles/tlinestub/width=0.1875,%0.25 no effect!
+	/tikz/circuitikz/tripoles/american and port/height=0.95,%.8
+	/tikz/circuitikz/tripoles/american nand port/height=0.95,%.8
+	/tikz/circuitikz/tripoles/american or port/height=0.95,%.8
+	/tikz/circuitikz/tripoles/american nor port/height=0.95,%.8
+	/tikz/circuitikz/tripoles/american xor port/height=0.95,%.8
+	/tikz/circuitikz/tripoles/american xnor port/height=0.95,%.8
+	/tikz/circuitikz/bipoles/tline/height=0.4,%0.3
+%	/tikz/circuitikz/bipoles/tline/width=1.2,%0.8
+	/tikz/circuitikz/bipoles/diode/height=0.375,%
+	/tikz/circuitikz/bipoles/diode/width=0.375,%
+	/tikz/circuitikz/bipoles/varcap/height=0.375,%
+	/tikz/circuitikz/bipoles/varcap/width=0.375,%
+	/tikz/circuitikz/tripoles/triac/height=1.05,%
+	/tikz/circuitikz/tripoles/triac/width=0.952,%
+	/tikz/circuitikz/tripoles/thyristor/height=1.05,%
+	/tikz/circuitikz/tripoles/thyristor/width=0.952,%
+	/tikz/circuitikz/tripoles/op amp/height=0.952,%
+	/tikz/circuitikz/tripoles/op amp/width=1.2,%
+	/tikz/circuitikz/tripoles/op amp/font=\footnotesize,
+	/tikz/circuitikz/tripoles/gm amp/height=0.952,% 1.7
+	/tikz/circuitikz/tripoles/gm amp/width=1.2,% 1.4
+	%	/tikz/circuitikz/tripoles/gm amp/font=\footnotesize,
+	/tikz/circuitikz/tripoles/plain amp/height=0.952,% 1.7
+	/tikz/circuitikz/tripoles/plain amp/width=1.2,% 1.4
+	/tikz/circuitikz/bipoles/resistor/voltage/straight label distance/.initial=.8,
+	/tikz/circuitikz/bipoles/generic/voltage/straight label distance/.initial=.8,
+	/tikz/circuitikz/bipoles/inductor/voltage/straight label distance/.initial=.8,
+	/tikz/circuitikz/bipoles/fullgeneric/voltage/straight label distance/.initial=.8,
+	/tikz/circuitikz/bipoles/capacitor/voltage/straight label distance/.initial=1.0,
+	/tikz/circuitikz/bipoles/thickness=1.6,
+}
+\ctikzset{v/.append style={/tikz/european voltages}}
+
+\definecolor{netlabelcolor}{rgb}{0, 0, 0}
+\definecolor{lttotitextcolor}{rgb}{0, 0, 0}
+\definecolor{lttotidrawcolor}{rgb}{0, 0, 0}
+\definecolor{netcolor}{rgb}{0, 0, 0}
+
+\pgfkeys{/lt2ti/netlabel/font/.initial= \small}
+\pgfkeys{/lt2ti/text/font/.initial= \small}
+
+\pgfkeys{/lt2ti/Net/.style= {netcolor}}
+\tikzstyle{dashdotdotted}=[dash pattern=on 3pt off 2pt on \the\pgflinewidth off 2pt on \the\pgflinewidth off 2pt]
+
+\pgfkeys{/lt2ti/VArrow/.style= {->,>=latex}}
+\pgfkeys{/lt2ti/SArrow/.style= {->,>=angle 90}}

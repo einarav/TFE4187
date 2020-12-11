@@ -1,0 +1,86 @@
+\begin{tikzpicture}[circuit ee IEC, scale=0.6666666667]% default: 0.4
+	%\tikzstyle{every node}=[font=\small];%
+	%\node [draw] at (0.0,0.0) {\pgfkeysvalueof{/tikz/circuitikz/tripoles/op amp/font}};
+\draw [/lt2ti/Net](-0.5,-5.0)to[*short,-, color=netcolor] (-0.5,-3.5);% wire w3
+\draw [/lt2ti/Net](10.5,-5.0)to[*short,-, color=netcolor] (10.5,-3.5);% wire w4
+\draw [/lt2ti/Net](24.5,-5.0)to[*short,-, color=netcolor] (24.5,-3.5);% wire w5
+\draw [/lt2ti/Net](2.0,-6.5)to[*short,*-, color=netcolor] (1.5,-6.5);% wire w6
+\draw [/lt2ti/Net](2.0,-6.5)to[*short,*-, color=netcolor] (2.0,-6.5);% wire w10_w11 start
+\draw [/lt2ti/Net](-0.5,-9.0)to[*short,-*, color=netcolor] (-0.5,-9.0);% wire w10_w11 end
+\draw [/lt2ti/Net](2.0,-6.5) --  (2.0,-9.0) -- (-0.5,-9.0); % wire w10_w11 polyline 
+\draw [/lt2ti/Net](9,-6.5)to[*short, color=netcolor] (2.0,-6.5);% wire w7
+\draw [/lt2ti/Net](22.5,-6.5)to[*short, color=netcolor] (9.5,-6.5);% wire w8
+\draw [/lt2ti/Net](-0.5,-9.0)to[*short,*-, color=netcolor] (-0.5,-8.0);% wire w9
+\draw [/lt2ti/Net](10.5,-9.0)to[*short,*-, color=netcolor] (10.5,-8.0);% wire w12
+\draw [/lt2ti/Net](10.5,-9.0)to[*short,*-, color=netcolor] (10.5,-9.0);% wire w13_w15 start
+\draw [/lt2ti/Net](8.0,-9.5)to[*short,-, color=netcolor] (8.0,-9.5);% wire w13_w15 end
+\draw [/lt2ti/Net](10.5,-9.0) --  (8.0,-9.0) -- (8.0,-9.5); % wire w13_w15 polyline 
+\draw [/lt2ti/Net](13.0,-9.5)to[*short,-, color=netcolor] (13.0,-9.5);% wire w14_w16 start
+\draw [/lt2ti/Net](10.5,-9.0)to[*short,-*, color=netcolor] (10.5,-9.0);% wire w14_w16 end
+\draw [/lt2ti/Net](13.0,-9.5) --  (13.0,-9.0) -- (10.5,-9.0); % wire w14_w16 polyline 
+\draw [/lt2ti/Net](6.0,-11.0)to[*short,-o, color=netcolor] (4.5,-11.0);% wire w17
+\draw [/lt2ti/Net](16.5,-11.0)to[*short,o-, color=netcolor] (15.0,-11.0);% wire w18
+\draw [/lt2ti/Net](24.5,-11.0)to[*short,*-, color=netcolor] (24.5,-8.0);% wire w19
+\draw [/lt2ti/Net](26.5,-11.0)to[*short,o-*, color=netcolor] (24.5,-11.0);% wire w20
+\draw [/lt2ti/Net](-0.5,-12.0)to[*short,-*, color=netcolor] (-0.5,-9.0);% wire w21
+\draw [/lt2ti/Net](8.0,-13.5)to[*short,*-, color=netcolor] (8.0,-12.5);% wire w22
+\draw [/lt2ti/Net](13.0,-13.5)to[*short,*-, color=netcolor] (13.0,-12.5);% wire w24
+\draw [/lt2ti/Net](16.5,-13.5)to[*short,*-*, color=netcolor] (13.0,-13.5);% wire w25
+\draw [/lt2ti/Net](18.0,-13.5)to[*short,-*, color=netcolor] (16.5,-13.5);% wire w26
+\draw [/lt2ti/Net](21.0,-13.5)to[*short,-, color=netcolor] (20.5,-13.5);% wire w27
+\draw [/lt2ti/Net](24.5,-13.5)to[*short,*-*, color=netcolor] (24.5,-11.0);% wire w28
+\draw [/lt2ti/Net](24.5,-13.5)to[*short,*-, color=netcolor] (23.0,-13.5);% wire w29
+\draw [/lt2ti/Net](8.0,-14.5)to[*short,-*, color=netcolor] (8.0,-13.5);% wire w30
+\draw [/lt2ti/Net](13.0,-14.5)to[*short,-*, color=netcolor] (13.0,-13.5);% wire w31
+\draw [/lt2ti/Net](24.5,-14.5)to[*short,-*, color=netcolor] (24.5,-13.5);% wire w32
+\draw [/lt2ti/Net](10.5,-16.0)to[*short,*-, color=netcolor] (10.0,-16.0);% wire w34
+\draw [/lt2ti/Net](10.5,-16.0)to[*short,*-, color=netcolor] (10.5,-16.0);% wire w23_w33 start
+\draw [/lt2ti/Net](8.0,-13.5)to[*short,-*, color=netcolor] (8.0,-13.5);% wire w23_w33 end
+\draw [/lt2ti/Net](10.5,-16.0) --  (10.5,-13.5) -- (8.0,-13.5); % wire w23_w33 polyline 
+\draw [/lt2ti/Net](11.0,-16.0)to[*short,-*, color=netcolor] (10.5,-16.0);% wire w35
+\draw [/lt2ti/Net](22.5,-16.0)to[*short,-, color=netcolor] (22.5,-16.0);% wire w36_w37 start
+\draw [/lt2ti/Net](16.5,-13.5)to[*short,-*, color=netcolor] (16.5,-13.5);% wire w36_w37 end
+\draw [/lt2ti/Net](22.5,-16.0) --  (16.5,-16.0) -- (16.5,-13.5); % wire w36_w37 polyline 
+\draw [/lt2ti/Net](-0.5,-18.5)to[*short,-, color=netcolor] (-0.5,-14.5);% wire w38
+\draw [/lt2ti/Net](8.0,-18.5)to[*short,-, color=netcolor] (8.0,-17.5);% wire w39
+\draw [/lt2ti/Net](13.0,-18.5)to[*short,-, color=netcolor] (13.0,-17.5);% wire w40
+\draw [/lt2ti/Net](24.5,-18.5)to[*short,-, color=netcolor] (24.5,-17.5);% wire w41
+ \draw (8.0, -18.6) node[ground, xscale=1, yscale=1, rotate=270, ] (undefined) {};%  (undefined)++(0.0,0.0) node {undefined }; % component "circuiTikz\gnd" "undefined" 
+ \draw (13.0, -18.6) node[ground, xscale=1, yscale=1, rotate=270, ] (undefined) {};%  (undefined)++(0.0,0.0) node {undefined }; % component "circuiTikz\gnd" "undefined" 
+ \draw (24.5, -18.6) node[ground, xscale=1, yscale=1, rotate=270, ] (undefined) {};%  (undefined)++(0.0,0.0) node {undefined }; % component "circuiTikz\gnd" "undefined" 
+ \draw (-0.5, -18.6) node[ground, xscale=1, yscale=1, rotate=270, ] (undefined) {};%  (undefined)++(0.0,0.0) node {undefined }; % component "circuiTikz\gnd" "undefined" 
+  \draw (20.5, -13.5) to[*resistor, l^=$\text{R}_\text{C}$, a_=, -, ] (18.0,-13.5){}; %\node [] at (21.0,-13.0) {x}; % component "res" "R1" 
+  \draw (23.0, -13.5) to[*capacitor, l^=$\text{C}_\text{C}$, a_=, -, ] (21.0,-13.5){}; % component "cap" "C1" 
+  %\node [] at (23.0,-14.0) {x}; % component "cap" "C1" 
+  %\draw (-0.5, -12.0) to[*I, l=I1, a=, , rotate=0,] (-0.5,-14.5){}; % component "current" "I1" 
+  \draw (-0.5, -12.0) to[*I, l=$\text{I}_\text{BIAS}$, a=,, -, ] (-0.5,-14.5){}; % component "current" "I1" 
+ \draw (-0.5, -6.5) node[pmos, nobodydiode, xscale=-1, yscale=1, rotate=-360, ] (Q8) {}   (Q8)++(1.0,1) node {$\text{Q}_\text{8}$ }; % component "pnp" "Q8" 
+ \draw (1.5, -6.5) to [*short, -] (Q8.B); \draw (-0.5, -5.0) to [*short, -] (Q8.E); \draw (-0.5, -8.0) to [*short, -] (Q8.C);% extend wires to the connection points   % component "pnp" "Q8" 
+ \draw (10.5, -6.5) node[pmos, nobodydiode, xscale=1, yscale=1, rotate=0, ] (Q5) {}   (Q5)++(1.0,1) node {$\text{Q}_\text{5}$ }; % component "pnp" "Q5" 
+ \draw (9, -6.5) to [*short] (Q5.B); \draw (10.5, -5.0) to [*short, -] (Q5.E); \draw (10.5, -8.0) to [*short, -] (Q5.C);% extend wires to the connection points   % component "pnp" "Q5" 
+ \draw (24.5, -6.5) node[pmos, nobodydiode, xscale=1, yscale=1, rotate=0, ] (Q6) {}   (Q6)++(1.0,1) node {$\text{Q}_\text{6}$ }; % component "pnp" "Q6" 
+ \draw (22.5, -6.5) to [*short, -] (Q6.B); \draw (24.5, -5.0) to [*short, -] (Q6.E); \draw (24.5, -8.0) to [*short, -] (Q6.C);% extend wires to the connection points   % component "pnp" "Q6" 
+ \draw (13.0, -11.0) node[pmos, nobodydiode, xscale=-1, yscale=1, rotate=-360, ] (Q2) {}   (Q2)++(-1.0,1) node {$\text{Q}_\text{2}$ }; % component "pnp" "Q2" 
+ \draw (15.0, -11.0) to [*short, -] (Q2.B); \draw (13.0, -9.5) to [*short, -] (Q2.E); \draw (13.0, -12.5) to [*short, -] (Q2.C);% extend wires to the connection points   % component "pnp" "Q2" 
+ \draw (8.0, -11.0) node[pmos, nobodydiode, xscale=1, yscale=1, rotate=0, ] (Q1) {}   (Q1)++(1.0,1) node {$\text{Q}_\text{1}$ }; % component "pnp" "Q1" 
+ \draw (6.0, -11.0) to [*short, -] (Q1.B); \draw (8.0, -9.5) to [*short, -] (Q1.E); \draw (8.0, -12.5) to [*short, -] (Q1.C);% extend wires to the connection points   % component "pnp" "Q1" 
+ \draw (8.0, -16.0) node[nmos, nobodydiode, xscale=-1, rotate=0, ] (Q3) {}   (Q3)++(1.0,1) node {$\text{Q}_\text{3}$ }; % component "npn" "Q3" 
+ \draw (10.0, -16.0) to [*short, -] (Q3.B); \draw (8.0, -17.5) to [*short, -] (Q3.E); \draw (8.0, -14.5) to [*short, -] (Q3.C);% extend wires to the connection points   % component "npn" "Q3" 
+ \draw (13.0, -16.0) node[nmos, nobodydiode, , rotate=0, ] (Q4) {}   (Q4)++(-1.0,1) node {$\text{Q}_\text{4}$ }; % component "npn" "Q4" 
+ \draw (11.0, -16.0) to [*short, -] (Q4.B); \draw (13.0, -17.5) to [*short, -] (Q4.E); \draw (13.0, -14.5) to [*short, -] (Q4.C);% extend wires to the connection points   % component "npn" "Q4" 
+ \draw (24.5, -16.0) node[nmos, nobodydiode, , rotate=0, ] (Q7) {}   (Q7)++(1.0,1) node {$\text{Q}_\text{7}$ }; % component "npn" "Q7" 
+ \draw (22.5, -16.0) to [*short, -] (Q7.B); \draw (24.5, -17.5) to [*short, -] (Q7.E); \draw (24.5, -14.5) to [*short, -] (Q7.C);% extend wires to the connection points   % component "npn" "Q7" 
+  \node (Vout) [] at (26.5,-11.0) {};% label mark % label "" "Vout" lbl46 
+  \node (Vouttxt) [ netlabelcolor, above= -0.1cm of Vout] {{\pgfkeysvalueof{/lt2ti/netlabel/font}$\text{V}_\text{OUT}$}}; % label "" "Vout" lbl46 
+  \node (Vin+) [] at (16.5,-11.0) {};% label mark % label "" "Vin+" lbl47 
+  \node (Vin+txt) [ netlabelcolor, above= -0.1cm of Vin+] {{\pgfkeysvalueof{/lt2ti/netlabel/font}$\text{V}_\text{IN+}$}}; % label "" "Vin+" lbl47 
+  \node (Vin-) [] at (4.5,-11.0) {};% label mark % label "" "Vin-" lbl48 
+  \node (Vin-txt) [ netlabelcolor, above= -0.1cm of Vin-] {{\pgfkeysvalueof{/lt2ti/netlabel/font}$\text{V}_\text{IN-}$}}; % label "" "Vin-" lbl48 
+  \node (Vdd) [rground, rotate=180] at (-0.5,-3.5) {};% label mark % label "" "Vdd" lbl49 
+  \node (Vddtxt) [ netlabelcolor, above= 0.28cm of Vdd] {{\pgfkeysvalueof{/lt2ti/netlabel/font}$\text{V}_\text{DD}$}}; % label "" "Vdd" lbl49 
+  \node (Vdd) [rground, rotate=180] at (10.5,-3.5) {};% label mark % label "" "Vdd" lbl50 
+  \node (Vddtxt) [ netlabelcolor, above= 0.28cm of Vdd] {{\pgfkeysvalueof{/lt2ti/netlabel/font}$\text{V}_\text{DD}$}}; % label "" "Vdd" lbl50 
+  \node (Vdd) [rground, rotate=180] at (24.5,-3.5) {};% label mark % label "" "Vdd" lbl51 
+  \node (Vddtxt) [ netlabelcolor, above= 0.28cm of Vdd] {{\pgfkeysvalueof{/lt2ti/netlabel/font}$\text{V}_\text{DD}$}}; % label "" "Vdd" lbl51 
+
+\end{tikzpicture}
